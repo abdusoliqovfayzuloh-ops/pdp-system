@@ -1,0 +1,31 @@
+.loading{
+    background: transparent;
+    border: transparent 5px solid ;
+    border-radius: 50%;
+    animation: infinite 1s ease-in loading;
+    position: relative;
+    border-left:darkblue 10px solid;
+    border-bottom:darkblue 10px solid;
+}
+.small{
+    width: 20px;
+    height: 20px;
+}
+.big{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 120px;
+    height: 120px;
+    top: 200px;
+    left: 430px;
+}
+@keyframes loading{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

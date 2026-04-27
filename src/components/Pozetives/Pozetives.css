@@ -1,0 +1,52 @@
+.pozetives__list{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 40px;
+}
+.pozetives__item{
+    background: white;
+    width: 330px;
+    height: 200px;
+    border-radius: 20px;
+    border: green 4px solid;
+    padding: 15px;
+    box-shadow: 1px 1px 4px 1px grey;
+}
+.pozetives__content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 15px;
+}
+.pozetives__inner{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+}
+.pozetivs_subtitle{
+    color: green;
+    font-size: 12px;
+    font-weight: 700;
+    width: 180px;
+}
+.pozetives_text{
+    color: green;
+    font-weight: 300;
+}
+.pozetives_ball{
+    color: green;
+    font-weight: 600;
+    font-size: small;
+    width: 70px;
+    height: 35px;
+    border: 2px solid green;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

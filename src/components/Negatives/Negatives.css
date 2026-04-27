@@ -1,0 +1,52 @@
+.negatives__list{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top:40px ;
+}
+.negatives__item{
+    background: white;
+    width: 330px;
+    height: 200px;
+    border-radius: 20px;
+    border: red 4px solid;
+    padding: 15px;
+    box-shadow: 1px 1px 4px 1px grey;
+}
+.negatives__content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 15px;
+}
+.negatives__inner{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+}
+.negatives_subtitle{
+    color: red;
+    font-size: 12px;
+    font-weight: 700;
+    width: 180px;
+}
+.negatives_text{
+    color: red;
+    font-weight: 300;
+}
+.negatives_ball{
+    color: red;
+    font-weight: 600;
+    font-size: small;
+    width: 70px;
+    height: 35px;
+    border: 2px solid red;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

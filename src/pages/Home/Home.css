@@ -1,0 +1,159 @@
+.student_top-title{
+    font-size: 48px ;
+    font-weight: 800;
+    padding-bottom: 20px;
+}
+.student{
+    background: white;
+    box-shadow: 1px 1px 10px 1px grey;
+    padding: 10px 80px;
+    height: 350px;
+    border-radius: 50px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.student__inner{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+    width: 100%;
+}
+.student__ball{
+    background: white;
+    width: 250px;
+    height: 250px;
+    font-weight: 900;
+    font-size: 42px;
+    border: green 18px solid;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.student_title{
+    padding-top: 30px;
+    margin-bottom: -5px;
+}
+.green{
+    color: green;
+}
+.red{
+    color: red;
+}
+.span_green{
+    border: 5px solid green;
+    color: green;
+    padding: 8px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px;
+}
+.span_red{
+    border: 5px solid red;
+    color: red;
+    padding: 8px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px;
+}
+.student_title{
+    font-size: 48px;
+    font-weight: 800;
+}
+
+.reating__wraper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin:30px 0;
+}
+.reating__box{
+    background: white;
+    width: 240px;
+    height: 150px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 5px 1px grey;
+    transition: linear 0.3s;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.reating__box:hover{
+    transform: scale(110%);
+}
+.reating__plus-ball{
+    color: green;
+    font-size: 48px ;
+    font-weight: 900;
+}
+.reating__minus-ball{
+    color: red;
+    font-size: 48px ;
+    font-weight: 900;
+}
+.reating__end-ball{
+    color: green;
+    font-size:48px;
+    font-weight: 900;
+}
+.reating__end-roul{
+    padding: 20px;
+    font-size: smaller;
+}
+
+.teacher_title{
+    font-size: 48px ;
+    font-weight: 800;
+    padding-top: 50px;
+}
+.teacher__list{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 5px;
+}
+.teacher__item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: white;
+    box-shadow:1px 1px 5px 1px grey ;
+    padding: 20px 30px;
+    border-radius: 30px;
+}
+.teacher__list{
+    padding-top: 20px;
+}
+.teacher__content{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.teacher__ball{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.teacher_ball-plus{
+    color: green;
+    border: 2px solid green;
+    padding: 5px 10px ;
+    border-radius: 8px;
+}
+.teacher_ball-minus{
+    color: red;
+    border: 2px solid red;
+    padding: 5px 10px ;
+    border-radius: 8px;
+}

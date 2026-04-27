@@ -1,0 +1,57 @@
+:root{
+    --text-color:white;
+    --section-color: rgb(2, 2, 73);
+    --body-color:white;
+}
+body{
+    font-family: "montserrat";
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+button{
+    cursor: pointer;
+}
+ul,ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+.site__loyaut{
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: 75px 1fr;
+}
+.site__header{
+    display: grid;
+    grid-column: 1/3;
+    grid-row: 1/2;
+
+    position: sticky;
+    top: 0;
+    z-index: 11;
+}
+.site__sidebar{
+    display: grid;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    background: white;
+
+    position: sticky;
+    bottom:0;
+    left: 0;
+    z-index: 10;
+    height: 100vh;
+    border-right: 1px solid gainsboro;
+}
+.site__main{
+    display: grid;
+    grid-column:2/3 ;
+    grid-row:2/3 ;
+    background: #ebf2ff;
+    padding: 30px ;
+}
