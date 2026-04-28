@@ -13,6 +13,8 @@ import Complain from "./pages/Complain/Complain"
 
 function App() {
   const [student, setStudent] = useState({})
+  const [transactionId, setTransactionsId] = useState("")
+  const [teacher, setTeacher] = useState({})
   const router = createBrowserRouter([
     {
       path: "/",
@@ -32,7 +34,7 @@ function App() {
         },
         {
           path: "home",
-          element: <Home/>
+          element: <Home setTeacher={setTeacher} setTransactionsId={setTransactionsId}/>
         },
         {
           path: "leaders",
@@ -58,7 +60,7 @@ function App() {
         },
         {
           path: "complain",
-          element: <Complain/>
+          element: <Complain student={student} teacher={teacher} transactionId={transactionId}/>
         },
         {
           path:"profil",

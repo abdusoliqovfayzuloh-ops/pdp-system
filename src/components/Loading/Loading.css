@@ -1,31 +1,25 @@
-.loading{
-    background: transparent;
-    border: transparent 5px solid ;
-    border-radius: 50%;
-    animation: infinite 1s ease-in loading;
-    position: relative;
-    border-left:darkblue 10px solid;
-    border-bottom:darkblue 10px solid;
-}
-.small{
-    width: 20px;
-    height: 20px;
-}
-.big{
+/* Loader container */
+.loading {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    width: 120px;
-    height: 120px;
-    top: 200px;
-    left: 430px;
+    padding: 20px;
 }
-@keyframes loading{
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
+
+/* Spinner */
+.loading::after {
+    content: "";
+    width: 40px;
+    height: 40px;
+    border: 4px solid #e5e7eb;
+    border-top-color: #4f46e5;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+/* Animation */
+@keyframes spin {
+    to {
         transform: rotate(360deg);
     }
 }

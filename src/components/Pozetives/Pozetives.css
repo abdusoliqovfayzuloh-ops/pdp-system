@@ -1,52 +1,68 @@
-.pozetives__list{
+/* List */
+.pozetives__list {
+    list-style: none;
+    padding: 20px;
+    margin: 0;
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding-top: 40px;
+    flex-direction: column;
+    gap: 15px;
 }
-.pozetives__item{
-    background: white;
-    width: 330px;
-    height: 200px;
-    border-radius: 20px;
-    border: green 4px solid;
-    padding: 15px;
-    box-shadow: 1px 1px 4px 1px grey;
+
+/* Card */
+.pozetives__item {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 15px 18px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: 0.2s ease;
 }
-.pozetives__content{
+
+.pozetives__item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+/* Top row */
+.pozetives__content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-bottom: 15px;
 }
-.pozetives__inner{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 5px;
-}
-.pozetivs_subtitle{
-    color: green;
-    font-size: 12px;
-    font-weight: 700;
-    width: 180px;
-}
-.pozetives_text{
-    color: green;
-    font-weight: 300;
-}
-.pozetives_ball{
-    color: green;
-    font-weight: 600;
-    font-size: small;
-    width: 70px;
-    height: 35px;
-    border: 2px solid green;
-    border-radius: 10px;
 
+/* Inner */
+.pozetives__inner {
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 10px;
+}
+
+/* Icon */
+.pozetives_icon {
+    background-color: #ecfdf5;
+    padding: 6px;
+    border-radius: 8px;
+}
+
+/* Subtitle */
+.pozetivs_subtitle {
+    font-size: 15px;
+    font-weight: 500;
+    color: #065f46;
+}
+
+/* Ball */
+.pozetives_ball {
+    background-color: #d1fae5;
+    color: #059669;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Text */
+.pozetives_text {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #6b7280;
 }

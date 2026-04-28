@@ -20,10 +20,8 @@ const Login = ({setStudent}) => {
       })
       //student.9a1@gmail.com, Student@123
       localStorage.setItem("token", res.data.data.accessToken)
-      if(localStorage.getItem("token") || res.data.role == "student"){
-        setStudent(res.data)
-        navigate("/loyaut/home")
-      }
+      setStudent(res.data)
+      navigate("/loyaut/home")
     }catch(err){
       console.error(err);
     }finally{

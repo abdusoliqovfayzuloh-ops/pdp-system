@@ -16,6 +16,7 @@ function Negatives() {
             headers: {
                 Authorization: `Bearer ${token}`
             }
+            
         })
         setNegatives(res.data.data)
     }catch(err){

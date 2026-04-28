@@ -1,52 +1,68 @@
-.negatives__list{
+/* List */
+.negatives__list {
+    list-style: none;
+    padding: 20px;
+    margin: 0;
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding-top:40px ;
+    flex-direction: column;
+    gap: 15px;
 }
-.negatives__item{
-    background: white;
-    width: 330px;
-    height: 200px;
-    border-radius: 20px;
-    border: red 4px solid;
-    padding: 15px;
-    box-shadow: 1px 1px 4px 1px grey;
+
+/* Item card */
+.negatives__item {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 15px 18px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: 0.2s ease;
 }
-.negatives__content{
+
+.negatives__item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+/* Top row */
+.negatives__content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-bottom: 15px;
 }
-.negatives__inner{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 5px;
-}
-.negatives_subtitle{
-    color: red;
-    font-size: 12px;
-    font-weight: 700;
-    width: 180px;
-}
-.negatives_text{
-    color: red;
-    font-weight: 300;
-}
-.negatives_ball{
-    color: red;
-    font-weight: 600;
-    font-size: small;
-    width: 70px;
-    height: 35px;
-    border: 2px solid red;
-    border-radius: 10px;
 
+/* Left inner */
+.negatives__inner {
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 10px;
+}
+
+/* Icon */
+.negatives_icon {
+    background-color: #f3f4f6;
+    padding: 6px;
+    border-radius: 8px;
+}
+
+/* Description */
+.negatives_subtitle {
+    font-size: 15px;
+    font-weight: 500;
+    color: #111827;
+}
+
+/* Ball (points) */
+.negatives_ball {
+    background-color: #fee2e2;
+    color: #dc2626;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Title (text below) */
+.negatives_text {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #6b7280;
 }

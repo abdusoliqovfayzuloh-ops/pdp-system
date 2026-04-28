@@ -3,7 +3,7 @@ import './Complain.css'
 import { Link, Outlet } from 'react-router-dom';
 import axios from 'axios';
 
-function Complain() {
+function Complain({transactionId,  teacher, student}) {
   const token = localStorage.getItem("token")
   const [apples, setApples] = useState([])
   const applesInput = useRef(null)
@@ -22,28 +22,37 @@ function Complain() {
     }
   }
 
-  async function postApples(){
-    try{
-        const res = await axios.post("https://pdp-system-backend-1.onrender.com/api/v1/appeals",
-            {
-                transactionId: "sadfasdfasdfas",
-                message: applesInput.current.value
-            },
-            {
-              headers:{
-                Authorization: `Bearer ${token}`
-              }
-            } 
-        )
-        console.log(res.data)
-    }catch(err){
-        console.log(err)
-    }
+ async function postApples(){
+  try{
+    if (!transactionId) return alert("transactionId yo‘q")
+
+    await axios.post(
+      "https://pdp-system-backend-1.onrender.com/api/v1/appeals",
+      {
+        transactionId: transactionId,
+        message: applesInput.current.value
+      },
+      {
+        headers:{
+          Authorization: `Bearer ${token}`
+        }
+      }
+    )
+
+    applesInput.current.value = ""
+    getAppels()
+
+  }catch(err){
+    console.log(err)
   }
+}
 
   useEffect(() => {
     getAppels()
   },[])
+
+  console.log(transactionId);
+  
 
   return (<main className='site__main'>
         <h1 className='shikoyat_title'>Shikoyatlarim</h1>  
@@ -60,13 +69,18 @@ function Complain() {
             </form>
             <div className="shikoyat__wraper">
                 {
-                    apples.map((shikoyat) => <div className="shikoyat__content">
+                    apples.map((shikoyat) => <div key={shikoyat._id} className="shikoyat__content">
                      <div className="student__content">
-                        <img src="" alt="" className="shikoyat_avatar" />
-                        <h3 className="shikoyat_subtitle"></h3>
-                        <p className="shikoyat_text"></p>
+                        <h3 className="shikoyat_subtitle">{student.data.user.fullName}</h3>
+                        <p className="shikoyat_text">{student.data.user.email}</p>
                      </div>
-                     <p className="shikoyat_text"></p>
+                     <span className="shikoyat_ball">{shikoyat.transactionId.pointChange}</span>
+                     <p className="shikoyat_text">{shikoyat.message}</p>
+                     <p className="shikoyat_text">{shikoyat.transactionId.reason}</p>
+                     <div className="teacher__content">
+                        <h3 className="shikoyat_subtitle">{teacher.fullName}</h3>
+                        <p className="shikoyat_text">{teacher.email}</p>
+                     </div>
                     </div>)
                 }
             </div>

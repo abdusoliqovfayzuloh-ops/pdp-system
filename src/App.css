@@ -21,6 +21,7 @@ a{
     text-decoration: none;
 }
 
+
 .site__loyaut{
     display: grid;
     grid-template-columns: 260px 1fr;
