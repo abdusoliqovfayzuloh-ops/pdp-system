@@ -69,8 +69,8 @@ function Home({setTransactionsId, setTeacher}) {
     <h1 className="student_top-title">Student</h1>
     <section className='student'>
       <div className="student__inner">
-        <div className="student__ball">
-          <strong className={ball >= 5 ? "green" : "red"}>{ball} / 10</strong>
+        <div className='student__ball'>
+          <CircularProgressbar value={3 * 10} text={`${3}/10`} />
         </div>
         <div className="student__content">
           <span className={ball >= 5 ? "span_green" : "span_red"}>{status}</span>
