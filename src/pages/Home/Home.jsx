@@ -5,6 +5,7 @@ import commentIcon from '../../assets/comment icon.png'
 import './Home.css'
 import { useNavigate } from 'react-router-dom'
 import Loading from '../../components/Loading/Loading'
+import { CircularProgressbar } from 'react-circular-progressbar'
 
 function Home({setTransactionsId, setTeacher}) {
   const [transactions, setTransactions] = useState([])
