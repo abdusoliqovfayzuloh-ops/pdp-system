@@ -1,121 +1,104 @@
 import axios from 'axios'
 import './Profil.css'
 import React, { useEffect, useState } from 'react'
+import Modal from '../../components/Modal/Modal'
 
 function Profil() {
 
+  const [user, setUser] = useState(null)
+  const [open, setOpen] = useState(false)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState("")
 
-    const [user, setUser] = useState([])
-    const [clas, setClas] = useState([])
-    const [number, setNumber] = useState([])
-    const token = localStorage.getItem("token")
+  const token = localStorage.getItem("token")
 
+  // 🔄 GET PROFILE
+  async function getProfile() {
+    try {
+      setLoading(true)
 
-    // profil  ismlari bu
-
-    async function getProfile() {
-        try {
-            const res = await axios.get("https://pdp-system-backend-1.onrender.com/api/v1/auth/me ", {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
-            })
-            setUser(res.data.data);
-            console.log(res.data.data);
-        } catch (error) {
-            console.log(error.message);
+      const res = await axios.get("https://pdp-system-backend-1.onrender.com/api/v1/auth/me",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
         }
+      )
+
+      setUser(res.data.data)
+
+    } catch (err) {
+      console.log(err)
+      setError("Ma'lumotlarni olishda xatolik!")
+    } finally {
+      setLoading(false)
     }
+  }
 
+  useEffect(() => {
+    getProfile()
+  }, [])
 
+  // ⏳ LOADING
+  if (loading) return <h2>Loading...</h2>
 
-    // sinfini oliyapman
+  // ❌ ERROR
+  if (error) return <h2>{error}</h2>
 
-    async function getProfileClass() {
-        try {
-            const res = await axios.get(`https://pdp-system-backend-1.onrender.com/api/v1/auth/me`, {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
-            })
-            console.log(res.data.data)
+  return (
+    <main className="sitemain">
 
+      <h1>Profile</h1>
 
-            setClas(res.data.data.classId);
-        } catch (error) {
-            console.log(error.message);
-        }
-    }
+      {/* PROFILE CARD */}
+      <div className="aboutchild">
+        <span className='nameimg'>
+          {user?.fullName?.slice(0, 2).toUpperCase()}
+        </span>
 
-    // telefon nomerini olish
-    async function getProfileNumber() {
-        try {
-            const res = await axios.get(`https://pdp-system-backend-1.onrender.com/api/v1/auth/me`, {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
-            })
-            console.log(res.data.data)
+        <h2 className='name'>{user?.fullName}</h2>
+        <p className='email'>{user?.email}</p>
+        <p className='sinf'>Sinf: {user?.classId?.name}</p>
+      </div>
 
+      {/* INFO */}
+      <div className="malumot">
+        <h2>Shaxsiy ma'lumotlar</h2>
 
-            setNumber(res.data.data);
-        } catch (error) {
-            console.log(error.message);
-        }
-    }
+        <p>To‘liq ism</p>
+        <h3>{user?.fullName}</h3>
 
-    useEffect(() => {
-        getProfile(),
-            getProfileClass(),
-            getProfileNumber()
-    }, [])
+        <p>Email</p>
+        <h3>{user?.email}</h3>
 
+        <p>Sinf</p>
+        <h3>{user?.classId?.name}</h3>
 
-    return (
-        <main className="sitemain">
-            <div>
+        <p>Telefon</p>
+        <h3>{user?.parentPhone}</h3>
+      </div>
 
-                <h1>Profile</h1>
+      {/* PASSWORD */}
+      <div className="parols">
+        <p>Email</p>
+        <h3>{user?.email}</h3>
 
+        <p>Parol</p>
+        <h3>****</h3>
 
+        <button
+          className='btn__edit'
+          onClick={() => setOpen(true)}
+        >
+          Edit password
+        </button>
+      </div>
 
-                <div className="aboutchild">
-                    <span className='nameimg'>AB</span>
-                    <h2 className='name'>{user?.fullName}</h2>
-                    <p className='email'>{user?.email}</p>
-                    <p className='sinf'>sinf:{clas?.name}</p>
+      {/* 🔐 MODAL */}
+      {open && <Modal setOpen={setOpen} />}
 
-                </div>
-            </div>
-
-
-
-            <div className="malumot">
-                <h2 className='shaxsiy'>shaxsiy malumotlarim</h2>
-
-                <p className='toliq ism'>toliq ism</p>
-                <h2>{user?.fullName}</h2>
-                <p>Elektron pochta</p>
-                <h2>{user?.email}</h2>
-                <p>Sinf</p>
-                <h2>{clas?.name}</h2>
-                <p>Telefon rqami</p>
-                <h2>{number?.parentPhone}</h2>
-            </div>
-
-
-              <div className="parols">
-                <h2 className='email'>email</h2>
-                <p className='emailsi'>{user?.email}</p>
-
-
-                 <h2 className='parol'>parol</h2>
-              <p className="paroli">****</p>
-             
-            </div>
-        </main>
-
-    )
+    </main>
+  )
 }
 
 export default Profil

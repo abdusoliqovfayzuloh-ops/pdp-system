@@ -1,26 +1,16 @@
-/* Light mode umumiy fon */
-body {
-    background-color: #f5f7fa;
-    color: #1a1a1a;
-    font-family: Arial, sans-serif;
-}
-
-/* Main container */
 .sitemain {
     padding: 20px;
 }
 
-/* Profile card */
 .aboutchild {
     background-color: #ffffff;
     border-radius: 12px;
     padding: 20px;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     margin-bottom: 20px;
 }
 
-/* Avatar */
 .nameimg {
     background-color: #4f46e5;
     color: #fff;
@@ -32,7 +22,6 @@ body {
     margin-bottom: 10px;
 }
 
-/* Textlar */
 .name {
     margin: 5px 0;
 }
@@ -45,36 +34,48 @@ body {
     color: #333;
 }
 
-/* Info block */
 .malumot {
     background-color: #ffffff;
     border-radius: 12px;
     padding: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     margin-bottom: 20px;
 }
 
-/* Section titles */
 .shaxsiy {
     margin-bottom: 10px;
 }
 
-/* Parol block */
 .parols {
     background-color: #ffffff;
     border-radius: 12px;
     padding: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-/* Labels */
 p {
+    margin-bottom: 15px;
+    color: #111;
+
+}
+
+
+h2 {
     color: #888;
     margin-bottom: 5px;
 }
 
-/* Values */
-h2 {
-    margin-bottom: 15px;
-    color: #111;
+
+.btn__edit {
+    padding: 10px 14px;
+    border: none;
+    background: #4f46e5;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn__edit:hover {
+    background: #4338ca;
 }
