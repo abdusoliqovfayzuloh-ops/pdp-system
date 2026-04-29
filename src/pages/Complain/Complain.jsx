@@ -3,10 +3,11 @@ import './Complain.css'
 import { Link, Outlet } from 'react-router-dom';
 import axios from 'axios';
 
-function Complain({transactionId,  teacher, student}) {
+function Complain({ teacher, student}) {
   const token = localStorage.getItem("token")
   const [apples, setApples] = useState([])
   const applesInput = useRef(null)
+  const transactionId = localStorage.getItem("transactionId")
 
   async function getAppels(){
     try{
@@ -15,7 +16,6 @@ function Complain({transactionId,  teacher, student}) {
                 Authorization: `Bearer ${token}`
             }
         })
-        console.log(res.data)
         setApples(res.data.data)
     }catch(err){
         console.log(err)
@@ -26,8 +26,7 @@ function Complain({transactionId,  teacher, student}) {
   try{
     if (!transactionId) return alert("transactionId yo‘q")
 
-    await axios.post(
-      "https://pdp-system-backend-1.onrender.com/api/v1/appeals",
+    const res = await axios.post("https://pdp-system-backend-1.onrender.com/api/v1/appeals",
       {
         transactionId: transactionId,
         message: applesInput.current.value
@@ -50,9 +49,6 @@ function Complain({transactionId,  teacher, student}) {
   useEffect(() => {
     getAppels()
   },[])
-
-  console.log(transactionId);
-  
 
   return (<main className='site__main'>
         <h1 className='shikoyat_title'>Shikoyatlarim</h1>  
