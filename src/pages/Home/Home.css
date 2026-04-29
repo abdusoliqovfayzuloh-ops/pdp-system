@@ -35,21 +35,22 @@
 .red{
     color: red;
 }
-.span_green{
-    border: 5px solid green;
-    color: green;
-    padding: 8px 20px;
-    font-size: 18px;
-    font-weight: 600;
-    border-radius: 10px;
+.span_green {
+  background: #dcfce7;
+  color: #16a34a;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  width: fit-content;
 }
-.span_red{
-    border: 5px solid red;
-    color: red;
-    padding: 8px 20px;
-    font-size: 18px;
-    font-weight: 600;
-    border-radius: 10px;
+
+.span_red {
+  background: #fee2e2;
+  color: #dc2626;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  width: fit-content;
 }
 .student_title{
     font-size: 48px;
